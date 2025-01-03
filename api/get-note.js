@@ -38,7 +38,6 @@ exports.handler = async (event) => {
                 headers: util.getResponseHeaders()
             };
         }
-
         
     } catch (err) {
         console.log("Error", err);
