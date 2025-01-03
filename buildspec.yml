@@ -4,16 +4,16 @@ phases:
   install:
     commands:
       - echo Installing Serverless...
-      - npm install -g serverless@3.39.0
+      - npm install -g serverless@3.40.0
   pre_build:
     commands:
       - echo Install source NPM dependencies...
-      - npm install
+      - npm install --legacy-peer-deps
   build:
     commands:
       - echo Deployment started on `date`
       - echo Deploying with the Serverless Framework...
-      - serverless deploy -v -s $ENV_NAME
+      - serverless deploy --verbose -v -s $ENV_NAME
   post_build:
     commands:
       - echo Deployment completed on `date`
